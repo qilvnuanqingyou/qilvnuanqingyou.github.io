@@ -1,640 +1,572 @@
 <!DOCTYPE html>
-<html class="full-height">
+<html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<title>
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+    Hexo
+  
+</title>
+
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/common.css">
-<link rel="stylesheet" href="/css/nav.css">
-<link rel="stylesheet" href="/css/layout.css">
-  
+
+
+  <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
 
 </head>
+<body
+  
+    class="monochrome"
+  
+  >
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">Hexo</a>
+</div>
 
-<body>
-  <header id="navbar" class="overflow-hidden">
-  <div class="container">
-    <nav class="nav">
-         <div class="nav-left">
-            <a href="/" class="nav-item" style="font-size: 20px;">
-              <span class="logo">Diskobólos</span>'s Blog
-            </a>
-         </div>
-        <div class="nav-center is-hidden position-relative" id="search_container">
-            <div class="nav-item full-width full-height">
-                <i class="fa fa-search has-padding" aria-hidden="true"></i>
-                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
-                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
-            </div>
-            <div id="search_result"></div>
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">Hexo</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">John Doe</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <a href="/about"><img src="https://cn.gravatar.com/avatar/35fef74d731255cd569c2c2b0b9e87e4?s=200"></a>
+          
         </div>
-        <div class="nav-right nav-menu">
-            <a class="nav-item" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-            
-            <a class="nav-item" href="/">
-                Home
-            </a>
-            
-            <a class="nav-item" href="/works">
-                My Works
-            </a>
-            
-            <a class="nav-item" href="/about">
-                About
-            </a>
-            
-        </div>
-        <span class="nav-toggle" id="navMenuDropdown">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
-            
-            <a class="nav-item flex-1" href="/">
-                Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/works">
-                My Works
-            </a>
-            
-            <a class="nav-item flex-1" href="/about">
-                About
-            </a>
-            
-        </div>
-    </nav>
+      
+    </div>
   </div>
-</header>
-
-  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
-      <div class="main-inner-content">
-          <style>
-    .post-hover:hover {
-        box-shadow: inset 0 0 100px #000;
-        transition: box-shadow .2s;
-    }
-
-    .sub-post-container .post-hover:hover h3 {
-        text-decoration: underline gray;
-    }
-
-
-    .primary-item-main {
-        height: 330px;
-        background-size: cover;
-    }
-
-    .primary-container .title,
-    .primary-container .sub-title,
-    .primary-container .post-content-text,
-    .primary-container .date {
-        color: #fff;
-    }
-
-    .post-content-text {
-        color: #f1f1f1!important;
-    }
-
-    .primary-container .post-hover {
-        background: black;
-    }
-
-    .content-bg-mask {
-        background: rgba(0,0,0,.4);
-    }
-
-</style>
-
-<div style="background: #f5f8f9;">
-    <div id="main-container" class="container" style="padding-top: 20px;">
-        <div class="is-flex main-content justify-center">
-            <section class="column is-9">
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
                 
-<div class="primary-container content-box is-flex-desktop clear-padding bottom-line" style="margin-bottom: 25px;">
-    <div class="column  is-7-desktop">
-        <a href="/2017/08/25/也是醉了。。。/">
-            <div class="full-height post-hover"
-                 style="
-                         background-image: url('');
-                         height: 350px;
-                         background-size: cover;
-                         background-repeat: no-repeat;
-                         ">
-                    <div class=" is-flex flex-column center content has-text-centered full-height has-padding content-bg-mask">
-                        <h1 class="title text-shadow" style="margin-bottom: 15px;">
-                            HTML5标签audio和video在webstorm使用的问题
-                        </h1>
-                        <div>
-                        
-                            
-                        
-                        </div>
-                        <p class="post-content-text is-marginless has-padding text-shadow">
-                            audio 的loop在webstorm中的使用在webstorm里音频大小大概超过5.23M，使用loop就不能循环播放了，
-
-                        </p>
-                        <p class="date text-shadow">2017-08-25</p>
-                        <button class="button is-info is-small">Read More</button>
-                    </div>
-            </div>
-        </a>
-    </div>
-    <div class="column is-5 is-hidden-touch" style="padding-left: 0;">
-        <div class="full-height is-flex flex-column justify-space-between" style="min-height: 350px;">
+              </li>
             
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
                 
-<a class="post-hover" href="/2017/08/24/xiaoxintest/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                xiaoxintest
-            </h3>
+              </li>
             
+          
             
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/">2015</a><span class="archive-list-count">1</span></li></ul>
+              </li>
             
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Welcome to Hexo! This is your very first post. C..
-            </p>
-            <p class="date text-shadow is-marginless">2017-08-24</p>
-        </div>
-    </div>
-</a>
+          
+        </ul>
+      
+        <ul class="nav">
+          
             
+              <li>
+                <a href="/" title="Homepage">Homepage</a>
+              </li>
             
-                
-<a class="post-hover" href="/2017/08/24/测试/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                测试文章
-            </h3>
+          
             
+              <li>
+                <a href="/archives" title="By Year">By Year</a>
+              </li>
             
+          
+        </ul>
+      
+        <ul class="nav">
+          
             
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                标题2
-列表
-
-
-            </p>
-            <p class="date text-shadow is-marginless">2017-08-24</p>
-        </div>
-    </div>
-</a>
+              <li>
+                <a href="https://github.com/denjones/hexo-theme-chan" title="Chan" target="_blank" rel="external">Chan</a>
+              </li>
             
-        </div>
-    </div>
-    <div class="column is-12 is-hidden-desktop">
-        
-        
-<a class="post-hover" href="/2017/08/24/xiaoxintest/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                xiaoxintest
-            </h3>
+          
             
+              <li>
+                <a href="https://github.com/denjones" title="Github" target="_blank" rel="external">Github</a>
+              </li>
             
+          
             
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                Welcome to Hexo! This is your very first post. C..
-            </p>
-            <p class="date text-shadow is-marginless">2017-08-24</p>
-        </div>
-    </div>
-</a>
-        
-        
-        
-<a class="post-hover" href="/2017/08/24/测试/" style="height: 48.5%">
-    <div class="content is-hidden-touch full-height overflow-hidden" style="background-image: url('')">
-        <div class="content-bg-mask full-width full-height has-padding">
-            <h3 class="title is-marginless text-shadow">
-                测试文章
-            </h3>
+              <li>
+                <a href="/atom.xml" title="RSS">RSS</a>
+              </li>
             
-            
-            
-            <p class="sub-title text-shadow"></p>
-            <p class="is-marginless text-shadow post-content-text">
-                标题2
-列表
-
-
-            </p>
-            <p class="date text-shadow is-marginless">2017-08-24</p>
-        </div>
-    </div>
-</a>
-        
-    </div>
+          
+        </ul>
+      
+    
+  </div>
 </div>
 
-                    
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/24/xiaoxintest/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>xiaoxintest</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a..
-                                        </p>
-                                        <p>2017-08-24</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  is-hidden-desktop" style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/24/测试/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>测试文章</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            标题2
-列表
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
 
+  
+  
+    <div class="post-list">
+  
 
-                                        </p>
-                                        <p>2017-08-24</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/24/today/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>todaytest</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a..
-                                        </p>
-                                        <p>2017-08-24</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/23/test/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>test test test</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a..
-                                        </p>
-                                        <p>2017-08-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/23/qiyou/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>qiyou</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a..
-                                        </p>
-                                        <p>2017-08-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2017/08/23/hello-world/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>Hello World</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can a..
-                                        </p>
-                                        <p>2017-08-23</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                    
-                        <div class="content-box  " style="margin-bottom: 27px;">
-                            <a class="post-hover" href="/2015/08/25/test222/">
-                            <div class="columns" style="min-height: 230px;">
-                                
-                                <div class="column is-8-desktop post-content is-flex align-center">
-                                    <div class="content">
-                                        <h3>test222</h3>
-                                        
-                                        <p>
-                                            
-                                        </p>
-                                        <p>
-                                            Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-                                        </p>
-                                        <p>2015-08-25</p>
-                                        <button class="button is-small">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        </div>
-                    
-                
-                <!--翻頁-->
-                <nav class="pagination is-flex" style="justify-content: flex-end">
-                    
-                        
-                        
-                    
-                </nav>
-            </section>
-            
-                <style>
-    /*user info start*/
-    .user-info {
-        padding: 15px 0 0;
-    }
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/25/也是醉了。。。/" >
+  HTML5标签audio和video在webstorm使用的问题
+</a>
 
-    .user-info .avatar {
-        width: 155px;
-        height: 155px;
-        border-radius: 50%;
-    }
+      </h3>
+      
 
-    .sns-container {
-        flex-wrap: wrap;
-    }
+      <div class="article-info">
+        <a href="/2017/08/25/也是醉了。。。/"><span class="article-date">
+  2017-08-25
+</span>
+</a>
+        
 
-    .sns-container a{
-        color: black;
-    }
-    /*user info end*/
-
-    /*Tag start*/
-    #tag_cloud .tags-item{
-        display: inline-block;
-        color: #000;
-        border: 1px solid gray;
-
-        margin: 4px 2px;
-        padding: 0 4px;
-        border-radius: 6px;
-    }
-    /*Tag end*/
-
-    /*Site box start*/
-    .site-box {
-        height: 60px;
-    }
-    /*Site box end*/
-
-    .category-list-item,
-    .archive-list-item {
-        display: flex;
-        margin-bottom: 4px;
-        justify-content: space-between;
-    }
-    .category-list-link,
-    .archive-list-link {
-        color: black;
-    }
-
-    .category-list-count,
-    .archive-list-count {
-        width: 32px;
-        text-align: center;
-        border-radius: 4px;
-        color: #fff;
-        background-color: gray;
-    }
-</style>
-<aside class="column is-hidden-touch is-3" style="max-width: 280px; min-width: 230px">
-    <div class="content-box user-info">
-        <div class="has-padding">
-            <header class="has-text-centered">
-                <img class="avatar" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png">
-            </header>
-            <section class="has-text-centered">
-                <h3><strong>Diskobólos</strong></h3>
-                <p class="sub-title">A Touch Of Zen</p>
-                
-                <p class="is-flex center" style=" color: gray">
-                    <i class="fa fa-map-marker" style="padding: 5px"></i>
-                    Earth
-                </p>
-                
-            </section>
-        </div>
-        <div class="top-line">
-            <ul class="sns-container justify-center is-flex has-padding">
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://twitter.com/ehazon">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://www.zhihu.com/people/margretz">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-
-                
-
-                
-                <li>
-                    <a target="_blank" href="https://github.com/haojen">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                    </a>
-                </li>
-                
-
-                
-            </ul>
-        </div>
-    </div>
-    <div class="content-box">
-        <!--post数量和tag category 数量-->
-        <div class="site-box is-flex">
-            <div class="flex-1 is-flex flex-column center full-height right-line">
-                <strong>8</strong>
-                <p>Posts</p>
-            </div>
-            <div class="flex-1 is-flex flex-column center full-height">
-                <strong></strong>
-                <p>Tags</p>
-            </div>
-        </div>
-    </div>
-    <div id='tag_cloud' class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Tags</strong>
-        </div>
-        <div class="content-inner is-flex flex-wrap justify-space-between">
-            
-        </div>
-    </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Categories</strong>
-        </div>
-        <div class="content-inner">
-            
-        </div>
-    </div>
-    <div class="content-inner content-box">
-        <div class="has-text-centered">
-            <strong>Archives</strong>
-        </div>
-        <div class="content-inner">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li></ul>
-        </div>
-    </div>
-</aside>
-            
-        </div>
-    </div>
-</div>
+        
 
       </div>
-  </div>
-  <style>
-  #footer {
-    min-height: 10vh;
-    background: black;
-    color: #fff;
-  }
+      <div class="article-entry">
+        
+          <h2 id="audio-的loop在webstorm中的使用"><a href="#audio-的loop在webstorm中的使用" class="headerlink" title="audio 的loop在webstorm中的使用"></a>audio 的loop在webstorm中的使用</h2><p>在webstorm里音频大小大概超过5.23M，使用loop就不能循环播放了，</p>
 
-  #footer a {
-    color: #e1e1e1;
-  }
-</style>
-<footer id="footer" class="has-text-centered is-flex center">
-  <div class="container has-padding">
-    <div>
-      <div>
-        <!--请您保留作者署名, 主题制作来之不易-->
-        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
-        <br>
-        Copyright © John Doe 2017
-        <br>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/24/xiaoxintest/" >
+  xiaoxintest
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/24/xiaoxintest/"><span class="article-date">
+  2017-08-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/24/测试/" >
+  测试文章
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/24/测试/"><span class="article-date">
+  2017-08-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><ul>
+<li>列表</li>
+</ul>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/24/today/" >
+  todaytest
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/24/today/"><span class="article-date">
+  2017-08-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/23/test/" >
+  test test test
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/23/test/"><span class="article-date">
+  2017-08-23
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/23/qiyou/" >
+  qiyou
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/23/qiyou/"><span class="article-date">
+  2017-08-23
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2017/08/23/hello-world/" >
+  Hello World
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2017/08/23/hello-world/"><span class="article-date">
+  2017-08-23
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2015/08/25/test222/" >
+  test222
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2015/08/25/test222/"><span class="article-date">
+  2015-08-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2017 Hexo - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
       </div>
     </div>
   </div>
-</footer>
 
-<script src="/js/search_core.js"></script>
-<script src="/js/script.js"></script>
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
 
 </body>
 </html>
